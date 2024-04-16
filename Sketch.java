@@ -13,7 +13,6 @@ public class Sketch extends PApplet {
 
   public void draw() {
 
-    //Set variable for random
     Random myColor = new Random();
 
     int intXFlower = 0;
@@ -22,21 +21,26 @@ public class Sketch extends PApplet {
         for (int intColumn = 5; intColumn < 50; intColumn+=10) {
           intXFlower =  intRow * 10;  
           intYFlower =  intColumn * 10; 
+          if (!findNumber(intRow)) {
           drawFlower(intXFlower,intYFlower,10,myColor.nextInt(256),myColor.nextInt(256),myColor.nextInt(256));
+          }
         }
       }
     
     int intXFace = 0;
     int intYFace = 0;
-      for (int intRow = 5; intRow < 100; intRow+=20) {
+      for (int intRow2 = 5; intRow2 < 100; intRow2+=20) {
         for (int intColumn = 5; intColumn < 100; intColumn+=20) {
-          intXFace =  intRow * 5;  
-          intYFace =  intColumn * 5; 
+          intXFace =  intRow2 * 5;  
+          intYFace =  intColumn * 5;
+          if (!findNumber(intRow2)) {
           drawFace(intXFace,intYFace,30,10,10,10);
-        } 
+          }
+        }     
       }
-    
-  }
+      
+    }
+  
 
   /** Creates the flower
   * 
@@ -111,6 +115,21 @@ public class Sketch extends PApplet {
       // Mouth
       ellipse (faceX, faceY+faceSize/5,faceSize/2,faceSize/5);
   
+  }
+
+  /** Draws the flower if the number of rows of flowers are even
+  * 
+  * @param intNumOFEntities determines if the amount of rows are divisible by 2
+  * @return true or false
+  * @author T. Chu
+  */
+
+  public boolean findNumber (int intNumOfRows) {
+    if (intNumOfRows % 2 ==0) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }
