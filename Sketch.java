@@ -16,7 +16,6 @@ public class Sketch extends PApplet {
     //Set variable for random
     Random myColor = new Random();
 
-    
     int intXFlower = 0;
     int intYFlower = 0;
       for (int intRow = 5; intRow < 50; intRow+=10) {
@@ -26,7 +25,7 @@ public class Sketch extends PApplet {
           drawFlower(intXFlower,intYFlower,10,myColor.nextInt(256),myColor.nextInt(256),myColor.nextInt(256));
         }
       }
-
+    
     int intXFace = 0;
     int intYFace = 0;
       for (int intRow = 5; intRow < 100; intRow+=20) {
@@ -36,9 +35,19 @@ public class Sketch extends PApplet {
           drawFace(intXFace,intYFace,30,10,10,10);
         } 
       }
-
+    
   }
-  
+
+  /** Creates the flower
+  * 
+  * @param flowerX The x-coordinate of the flower's center
+  * @param flowerY The y-coordinate of the flower's center
+  * @param petalSize The size of the flower's petals
+  * @param myColor The red component of the flower's color
+  * @param myColor2 The green component of the flower's color
+  * @param myColor3 The blue component of the flower's color
+  * @author T. Chu
+  */
 
   public void drawFlower(float flowerX, float flowerY, float petalSize, float myColor, float myColor2, float myColor3) {
 
@@ -65,44 +74,43 @@ public class Sketch extends PApplet {
 
   }
   
+  /** Creates the face
+  * 
+  * @param faceX The x-coordinate of the face's center
+  * @param faceY The y-coordinate of the face's center
+  * @param faceSize The size of the face
+  * @param LeftEye The size of the left eye
+  * @param RightEye The size of the right eye
+  * @param Mouth The size of the mouth
+  * @author T. Chu
+  */
+
   public void drawFace(float faceX, float faceY, float faceSize, float LeftEye, float RightEye, float Mouth) {
 
-    // Reset the color to white
-    fill (255,255,255);
+      // Reset the color to white
+      fill (255,255,255);
 
-    // Head
-    ellipse (faceX,faceY,faceSize,faceSize);
-
-    // Set left eye color to black
-    fill(0,0,0);
-
-    // Left-eye
-    ellipse (faceX-width/50, faceY-width/60,faceSize/5,faceSize/5); 
-
-    // Set right eye color to black
-    fill(0,0,0);
-
-    // Right-eye
-    ellipse (faceX+width/50, faceY-width/60,faceSize/5,faceSize/5);
-
-    // Set mouth color to red
-    fill(255,5,5);
-
-    // Mouth
-    ellipse (faceX-width/500, faceY-width/4,faceSize/2,faceSize/5);
-
+      // Head
+      ellipse (faceX,faceY,faceSize,faceSize);
+  
+      // Set left eye color to black
+      fill(0,0,0);
+  
+      // Left-eye
+      ellipse (faceX-faceSize/5, faceY-faceSize/5,faceSize/5,faceSize/5); 
+  
+      // Set right eye color to black
+      fill(0,0,0);
+  
+      // Right-eye
+      ellipse (faceX+faceSize/5, faceY-faceSize/5,faceSize/5,faceSize/5);
+  
+      // Set mouth color to red
+      fill(255,5,5);
+  
+      // Mouth
+      ellipse (faceX, faceY+faceSize/5,faceSize/2,faceSize/5);
+  
   }
+
 }
-
-  
-  /**
-   * A program that uses methods and parameters to draw an inanimate object and an object that can change color
-   * 
-   * @param intAnountEntities
-   * @param 
-   * @return 
-   * @author T. Chu
-   */
-
-  
-  
